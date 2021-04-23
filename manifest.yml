@@ -7,16 +7,16 @@ metadata:
   name: angular-webapp
 spec:
   replicas: 5
-  selector:
-    matchLabels:
+  selector: 
+    matchLab  els:
       app: angular-webapp
   strategy: {}
   template:
-    metadata:
+    metadata: 
       creationTimestamp: null
-      labels:
+      labe  ls:
         app: angular-webapp
-    spec:
+    spec: 
       containers:
       - image: docker.io/bbachin1/angular-node-webapp
         name: webapp
@@ -24,6 +24,7 @@ spec:
         resources: {}
         ports:
           - containerPort: 3080 
+
 status: {}
 
 ---
@@ -33,12 +34,12 @@ kind: Service
 metadata:
   name: angular-webapp
   labels:
-    run: angular-webapp
-spec:
+    run: ang  ular-webapp
+spec: 
   ports:
   - port: 3080
-    protocol: TCP
+    pr  otocol: TCP
   selector:
     app: angular-webapp
-  type: NodePort
+  type: LoadBalancer
 
